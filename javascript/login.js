@@ -9,7 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         if(email === 'test@example.com' && password === 'password123'){
-            window.location.href='home.html';
+            // Mostrar spinner
+            const spinner = document.getElementById('loading-spinner');
+             spinner.classList.remove('hidden');
+    
+            // Simular tiempo de carga (2 segundos) y luego redirigir
+            setTimeout(() => {
+                window.location.href='home.html';
+            }, 2000);
         }else{
             loginError.style.display = 'block';
         }
